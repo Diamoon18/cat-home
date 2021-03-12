@@ -1,0 +1,10 @@
+Purpose of the game: help the cat get home.
+Watch out for ghosts, they can take all the paw bonuses.
+Collect paw bonuses to win the game.(min 4) 
+Be careful! If you hit the wall, the cat will lose one life.
+Avoid the dog and the traps, otherwise, you will lose or lose one life.
+Standard control:
+W - go forward
+A - go left
+S - go back
+D - go right 
