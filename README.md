@@ -1,5 +1,5 @@
 # Cat&home - Labirynt 2d Java
-A game based on the model, view, controller structure.\
+A game based on the **model, view, controller** structure.\
 Purpose of the game: help the cat get home.\
 Collect paw bonuses to win the game.(min 4) \
 If you collect the bonus you will be automatically transferred to the ghost.\
