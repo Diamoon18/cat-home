@@ -1,4 +1,4 @@
-# Cat&home - Labirynt 2d Java
+# Cat&home - Maze 2d Java
 A game based on the **model, view, controller** structure.\
 Purpose of the game: help the cat get home.\
 Collect paw bonuses to win the game.(min 4) \
