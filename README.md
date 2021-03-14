@@ -24,8 +24,8 @@ https://youtu.be/-CY_I-W8RMI
 ## Win
 ![Win](https://user-images.githubusercontent.com/72127610/111050807-0bc9f600-844f-11eb-825b-a24e4825ac5a.jpg)
 ## Explain code
-Model - game logic \
-View - drawing game objects \
+Model - game logic. \
+View - drawing game objects. \
 Controller - interaction with the user.
 ## 1) Controller
 ```Main controller``` - this is the entry point of the game. Here we have the main method. \
@@ -109,3 +109,69 @@ The mouse button is pressed or not (for the start menu)
 ```
 ## 2) Model
 ```Board model ``` - here is the main logic of the game.
+Three main functions:
+```gameRender()``` - is responsible for the Menu and Help keys in the Play state. \
+Also call the startGame function.
+```java
+public void gameRender() {
+	for(Button i:mapka.but) {
+		pasteButton(i);
+	}
+	startGame();
+}
+```
+```gameDraw()``` - draws the game on the screen.
+``` java	
+private void gameDraw() {
+	Graphics g2 = this.getGraphics();
+	g2.drawImage(image,0,0,null);
+	g2.dispose();
+}
+```
+```gameUpdate() ``` - call the functions of moving game objects.
+```java
+private void gameUpdate() {
+    	myCat.update();
+    	myDog.updateDog();
+    	ghosti.updateGhost();
+     }
+```
+Depending on the state of the game, it call the necessary functions.
+``` java
+@Override
+public void actionPerformed(ActionEvent e) {
+	if (stan.equals(BoardEnum.MENU)){
+		menu.draw(g);
+		gameDraw();
+		for(Button i:menu.menuButtons) {
+			pasteButton(i);
+		}
+	}
+	if (stan.equals(BoardEnum.PLAY)){
+		gameUpdate();
+		gameRender();
+		gameDraw();
+	}
+	if (stan.equals(BoardEnum.HELP)) {
+		help.draw(g);
+		gameDraw();
+		for(Button b: help.wroc) {
+			pasteButton(b);
+		}
+	}
+	if (stan.equals(BoardEnum.GAMEOVER)){
+		end.draw(g);
+		gameDraw();
+		for(Button b:end.ending) {
+			pasteButton(b);
+		}
+	}
+	if (stan.equals(BoardEnum.WIN)){
+		win.draw(g);
+		gameDraw();
+		for(Button b:win.ending) {
+			pasteButton(b);
+		}
+	}
+}
+```
