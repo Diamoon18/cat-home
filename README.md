@@ -11,9 +11,9 @@ W - go forward\
 A - go left\
 S - go back\
 D - go right
-## Game 
+## Game in action
 https://youtu.be/-CY_I-W8RMI
-## Menu
+## Screenshots - Menu
 ![Start_menu](https://user-images.githubusercontent.com/72127610/111050750-c60d2d80-844e-11eb-9c8c-00d67080d0a1.jpg)
 ## Play
 ![Play_mode](https://user-images.githubusercontent.com/72127610/111050797-040a5180-844f-11eb-991f-d4a5880b4744.jpg)
