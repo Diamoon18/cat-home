@@ -88,6 +88,7 @@ public class Board extends JPanel implements ActionListener{
 	}
 	
 	public void gameRender() {
+		mapka = new MapView(g);
 		for(Button i:mapka.but) {
 			pasteButton(i);
 		}
