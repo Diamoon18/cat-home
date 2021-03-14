@@ -198,3 +198,26 @@ else {
 	if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {e.color1 = Color.ORANGE ;e.s = "Play";}
 	...
 ```
+```startGame()``` - main logic in the game.
+Checking the coalition of the cat with the wall. \
+Adding music that symbolizes the loss of a life. \
+Game sleep for a second. \ 
+And the cat returns to the starting point without one live. \
+```java
+for(int i = 0; i < WallView.wall.size(); i++) {
+	if(CatView.catt.intersects(WallView.wall.get(i))) {
+		Music.PlayMusic("src/resourses/minLive.wav");
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		myCat.setX(10);
+		myCat.setY(40);
+		myCat.lives--;
+		break;
+	}
+}
+```
