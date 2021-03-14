@@ -181,7 +181,7 @@ If the coordinate of the mouse is on the button,
 if (mouseX > e.getX() && mouseX < e.getX()+e.getW() &&
 	mouseY > e.getY() && mouseY < e.getY()+e.getH()) {
 ```
-then find out what this button is. \ 
+then find out what this button is.
 Changing the color and text of the button. \
 If we press the button, then the state changes in this case to play. \
 If the coordinate of the mouse is not on the button, then don't change the labels and colors of the buttons. 
@@ -198,11 +198,11 @@ else {
 	if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {e.color1 = Color.ORANGE ;e.s = "Play";}
 	...
 ```
-```startGame()``` - main logic in the game.
-Checking the coalition of the cat with the wall. \
-Adding music that symbolizes the loss of a life. \
+```startGame()``` - main logic in the game. \
+Checking the coalition of the cat with the wall.\
+Adding music that symbolizes the loss of a life.\
 Game sleep for a second. \ 
-And the cat returns to the starting point without one live. \
+And the cat returns to the starting point without one live.
 ```java
 for(int i = 0; i < WallView.wall.size(); i++) {
 	if(CatView.catt.intersects(WallView.wall.get(i))) {
