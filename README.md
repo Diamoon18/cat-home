@@ -303,7 +303,7 @@ if(stan.equals(BoardEnum.GAMEOVER)) {
 } 
 ```
 ```Cat model``` - object cat, logic of the cat.\
-Variable initialization:\
+Variable initialization:
 ```java
 private static int x, y;
 	private static int w, h;
@@ -344,3 +344,4 @@ public void update() {
 	} 
 }
 ```
+By analogy with ```Dog model, Ghost model``` 
