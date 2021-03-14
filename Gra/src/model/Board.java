@@ -88,7 +88,6 @@ public class Board extends JPanel implements ActionListener{
 	}
 	
 	public void gameRender() {
-		mapka = new MapView(g);
 		for(Button i:mapka.but) {
 			pasteButton(i);
 		}
@@ -149,7 +148,7 @@ public class Board extends JPanel implements ActionListener{
 				mouseY > e.getY() && mouseY < e.getY()+e.getH()) {
 			if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {
 				e.color1 = Color.GREEN;
-				e.s = "Graæ";
+				e.s = "GraÃ¦";
 				if (MenuView.click) {
 					stan = BoardEnum.PLAY;
 					MenuView.click = false;
@@ -165,14 +164,14 @@ public class Board extends JPanel implements ActionListener{
 			}
 			if(e.equals(menu.menuButtons[2])) {
 				e.color1 = Color.RED;
-				e.s = "Wyjœæ";
+				e.s = "WyjÅ“Ã¦";
 				if (MenuView.click) {
 					System.exit(0);
 				}
 			}
 			if(e.equals(help.wroc[0]) || e.equals(mapka.but[1]) || e.equals(end.ending[0]) || e.equals(win.ending[0])) {
 				e.color1 = Color.GREEN;
-				e.s = "Wróæ";
+				e.s = "WrÃ³Ã¦";
 				if (MenuView.click) {
 					stan = BoardEnum.MENU;
 					MenuView.click = false;
