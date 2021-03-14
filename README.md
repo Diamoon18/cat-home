@@ -111,9 +111,10 @@ The mouse button is pressed or not (for the start menu)
 ```Board model ``` - here is the main logic of the game. \
 Three main functions: \
 ```gameRender()``` - is responsible for the Menu and Help keys in the Play state. \
-Also call the startGame function.
+Also call the startGame function and render-draw game.
 ```java
 public void gameRender() {
+	mapka = new MapView(g);
 	for(Button i:mapka.but) {
 		pasteButton(i);
 	}
@@ -300,4 +301,46 @@ if(stan.equals(BoardEnum.GAMEOVER)) {
 	myDog.setX(165);
 	myDog.setY(630);
 } 
+```
+```Cat model``` - object cat, logic of the cat.\
+Variable initialization:\
+```java
+private static int x, y;
+	private static int w, h;
+	public static int speed, lives, bonus;
+	
+	public boolean up;
+	public boolean down;
+	public boolean left;
+	public boolean right;
+```
+Setting the initial data in the constructor.
+```java
+public cat() {
+	x = 10;
+	y = 40;
+	w = 100;
+	h = 100;
+
+	speed = 10;
+	lives = 9;
+	bonus = 0;
+}
+```
+Moving the cat in different directions.
+``` java 
+public void update() {
+	if (down && y < Board.HEIGHT - h) {
+		y+=speed;
+	} 
+	if (up && y > 0) {
+		y-=speed;
+	} 
+	if (left && x > 0) {
+		x-=speed;
+	} 
+	if (right && x < Board.WIDTH - w) {
+		x+=speed;
+	} 
+}
 ```
