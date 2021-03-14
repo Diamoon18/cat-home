@@ -461,3 +461,23 @@ public String getMap(int x, int y) {
 	return index;
 }
 ```
+```Music model``` - for sounds in the game.\
+One function ```playMusic```:\
+Open music file and play, if it exists.
+```java
+try {
+	File musicPath = new File(path);
+	if(musicPath.exists()) {
+		AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+		Clip clip = AudioSystem.getClip();
+		clip.open(audioInput);
+		clip.start();
+	}else {
+		System.out.print("Not found!");
+	}
+
+} catch (Exception e) {
+		e.printStackTrace();
+}
+```
+## 3) View
