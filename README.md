@@ -305,7 +305,7 @@ if(stan.equals(BoardEnum.GAMEOVER)) {
 ```Cat model``` - object cat, logic of the cat.\
 Variable initialization:
 ```java
-private static int x, y;
+	private static int x, y;
 	private static int w, h;
 	public static int speed, lives, bonus;
 	
@@ -344,4 +344,120 @@ public void update() {
 	} 
 }
 ```
-By analogy with ```Dog model, Ghost model``` 
+By analogy with ```Dog model and Ghost model```.
+```Button model``` - object Button, logic of the button.
+Variable initialization:
+```java
+	private int x;
+	private int y;
+	private int w;
+	private int h;
+	
+	public Color color1;
+
+	public String s;
+	
+	public Button(int x, int y, int w, int h, String s){
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		this.s = s;
+		color1 = Color.ORANGE;
+	}
+```
+Drawing function for the Button.\
+Drawing rectangle and name of the Button.
+```java
+public void draw(Graphics2D g) {
+	g.drawRect(x, y, w, h);
+	g.setColor(color1);
+	g.fillRect(x, y, w, h);
+
+	Font font = new Font("Arial", Font.BOLD, 22);
+	g.setFont(font);
+	g.setColor(Color.BLACK);
+	g.drawString(s, x+32, y+30);
+}
+```
+```Help model``` - rules in the game, read from a text file.\
+Variable initialization and constructor:
+```java
+	private Scanner m;
+	private ArrayList<String> info = new ArrayList<String>();
+
+	public Help() {
+		openFile();
+		readFile();
+		closeFile();
+	}
+
+```
+Opening the file, read(add to list) and close.
+```java
+public void openFile() {
+	try {
+		m = new Scanner(new File("src/resourses/help.txt"));
+	} catch (FileNotFoundException e) {
+		System.out.print("Not found!");
+		e.printStackTrace();
+	}
+}
+public void readFile() {
+	while (m.hasNextLine())  {
+		info.add(m.nextLine());	
+	}
+}
+	
+public void closeFile() {
+	m.close();
+}
+```
+```Map model``` - map in the game, read from a text file.\
+In this text file:\
+X - wall\
+B - paw bonus\
+n - trap\
+F - home\
+o - empty space\
+Variable initialization and constructor:
+```java
+	private Scanner m;
+	private String Map[] = new String[14];
+	
+	public Map() {
+		openFile();
+		readFile();
+		closeFile();
+	}
+```
+Opening the file, read(add to table Map) and close.
+```java
+public void openFile() {
+	try {
+		m = new Scanner(new File("src/resourses/level1.txt"));
+	} catch (FileNotFoundException e) {
+		System.out.print("Not found!");
+		e.printStackTrace();
+	}
+}
+	
+public void readFile() {
+	while(m.hasNext()) {
+		for(int i = 0; i < 14; i++) {
+			Map[i] = m.next();
+		}
+	}
+}
+	
+public void closeFile() {
+	m.close();
+}
+```
+This function is for understanding which object will need to be drawn in view.(featching a character from an array)
+```java
+public String getMap(int x, int y) {
+	String index = Map[y].substring(x, x + 1);
+	return index;
+}
+```
