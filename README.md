@@ -5,7 +5,7 @@ Collect paw bonuses to win the game.(min 4) \
 If you collect the bonus you will be automatically transferred to the ghost.\
 Watch out for ghosts, they can take all the paw bonuses.\
 Be careful! If you hit the wall, the cat will lose one life.\
-Avoid the dog and the traps, otherwise, you will lose or lose one life.\
+Avoid the dog and the trap, otherwise, you will lose or lose one life.\
 Standard control:\
 W - go forward\
 A - go left\
@@ -181,7 +181,7 @@ If the coordinate of the mouse is on the button,
 if (mouseX > e.getX() && mouseX < e.getX()+e.getW() &&
 	mouseY > e.getY() && mouseY < e.getY()+e.getH()) {
 ```
-then find out what this button is.
+then find out what this button is.\
 Changing the color and text of the button. \
 If we press the button, then the state changes in this case to play. \
 If the coordinate of the mouse is not on the button, then don't change the labels and colors of the buttons. 
@@ -201,8 +201,9 @@ else {
 ```startGame()``` - main logic in the game. \
 Checking the coalition of the cat with the wall.\
 Adding music that symbolizes the loss of a life.\
-Game sleep for a second. \ 
-And the cat returns to the starting point without one live.
+Game sleep for a second.\ 
+And the cat returns to the starting point without one live.\
+By analogy with the trap.
 ```java
 for(int i = 0; i < WallView.wall.size(); i++) {
 	if(CatView.catt.intersects(WallView.wall.get(i))) {
@@ -219,5 +220,43 @@ for(int i = 0; i < WallView.wall.size(); i++) {
 		myCat.lives--;
 		break;
 	}
+}
+```
+Checking the coalition of the cat with the paw bonus.\
+Adding music that symbolizes the collect paw bonus.\
+Transferred to the ghost.\ 
+Adding one bonus to cat score.\
+```java
+for(int i = 0; i < BonusView.bon.size(); i++) {
+	if(CatView.catt.intersects(BonusView.bon.get(i).getPow())) {
+		Music.PlayMusic("src/resourses/bonus.wav");
+		myCat.setX(50);
+		myCat.setY(410);
+		myCat.bonus++;
+		break;
+	}
+}
+```
+Checking the coalition of the cat with the home and whether the cat has 4 paw bonuses.\
+Then change the state of the game to Win.\
+Adding win music.\
+Setting objects in initial coordinates.
+``` java
+if(CatView.getRectangleCat().intersects(HomeView.win) && myCat.getBonus() > 3){
+	stan = BoardEnum.WIN;
+	Music.PlayMusic("src/resourses/win.wav");
+	powScore = myCat.getBonus();
+
+	myCat.setX(10);
+	myCat.setY(40);
+
+	myCat.setLive(9);
+	myCat.setBonus(0);
+
+	ghosti.setX(54);
+	ghosti.setY(432);
+
+	myDog.setX(165);
+	myDog.setY(630);
 }
 ```
