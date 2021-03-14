@@ -528,7 +528,7 @@ If ```getMap()``` returns n, than draw gray oval and make new Rectangle for chec
 		}
 	}
 ```
-By anology with ```Wall view```
+By anology with ```Wall view, Home view```
 ```Menu view```
 Variable initialization:\
 Background image for the menu.\
@@ -538,10 +538,62 @@ Creating a Button table.
 	Image img = new ImageIcon("src/resourses/catti.jpg").getImage();
 	public Button [] menuButtons = {new Button(50, 300, 130, 50,"Play"), new Button(50, 400, 130, 50,"Help"), new Button(50, 500, 130, 50,"Exit")};
 ```
-```draw(Graphics2D g))``` - drawing background image and Buttons.
+```draw(Graphics2D g)``` - drawing background image and Buttons.
 ```java
 	g.drawImage(img, 0, 0, null);
 	for (Button i :menuButtons) {
 		i.draw(g);
 	}
+```
+```Map view``` - drawing in the screen every object of the game(state Play).\
+Variable initialization:	
+```java
+	CatView catt;
+	DogView dog; 
+	WallView wall;
+	BonusView bon;
+	HomeView home;
+	EmptyView em;
+	GhostView gh;
+	public Button but[] = {new Button(500, 5, 100, 40,"Help"),new Button(610, 5, 100, 40,"Menu")};
+```
+In the constructor drawing a black background.
+```java
+	g.setColor(Color.BLACK);
+	g.fillRect(0, 0, 750, 750);
+		
+```
+Displaying the number of lives and bonuses on the screen.
+```java
+	g.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
+	g.setColor(Color.WHITE);
+	g.drawString("Live:" + cat.getLive(), 0, 20);
+	g.drawString("Pow:" + cat.getBonus(), 0, 40);
+```
+Call the drawing function of individual objects.\
+```java
+	bon = new BonusView();
+	bon.draw(g);
+
+	home = new HomeView();
+	home.draw(g);
+
+	em = new EmptyView();
+	em.draw(g);
+
+	wall = new WallView();
+	wall.draw(g);
+
+	for(Button i: but) {
+		i.draw(g);
+	}
+
+	catt = new CatView();
+	catt.draw(g);
+
+	dog = new DogView();
+	dog.draw(g);
+
+	gh = new GhostView();
+	gh.draw(g);
 ```
