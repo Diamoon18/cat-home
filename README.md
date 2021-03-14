@@ -260,3 +260,44 @@ if(CatView.getRectangleCat().intersects(HomeView.win) && myCat.getBonus() > 3){
 	myDog.setY(630);
 }
 ```
+Checking the coalition of the cat with the ghost.\
+Adding music.\
+The cat returns to the starting point without paw bonuses.\
+```java
+if(CatView.getRectangleCat().intersects(GhostView.ghost)){
+	Music.PlayMusic("src/resourses/ghost.wav");
+	myCat.setX(10);
+	myCat.setY(40);
+	myCat.setBonus(0);
+}
+```
+Checking the coalition of the cat with the dog.\
+The cat returns to the starting point without paw bonuses and lives.(game over)\
+```java
+if(CatView.getRectangleCat().intersects(DogView.doggi)){
+	myCat.setLive(0);
+	myCat.setBonus(0);
+	myCat.setX(10);
+	myCat.setY(40);
+}
+```
+If the cat has less than one life, change state of the game to GameOver.\
+Adding GameOver music.\
+Setting objects in initial coordinates, lifes and paw bonuses.
+```java
+if(myCat.getLive() < 1) {
+	stan = BoardEnum.GAMEOVER;
+} 
+
+if(stan.equals(BoardEnum.GAMEOVER)) {
+	Music.PlayMusic("src/resourses/gameOver.wav");
+	myCat.setLive(9);
+	myCat.setBonus(0);
+
+	ghosti.setX(54);
+	ghosti.setY(432);
+
+	myDog.setX(165);
+	myDog.setY(630);
+} 
+```
