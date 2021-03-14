@@ -497,7 +497,7 @@ This rectangle needed for the **intersects method**, which is defined in the Rec
 	catt = new Rectangle(cat.getX()+30,cat.getY()+30,20,20);
 	//g.draw(catt);
 ```
-By anologi with ```Dog view, Ghost view```.\
+By anology with ```Dog view, Ghost view```.\
 ```Bonus view```
 Variable initialization:
 ```java
@@ -524,9 +524,24 @@ If ```getMap()``` returns n, than draw gray oval and make new Rectangle for chec
 				g.setColor(Color.DARK_GRAY);
 				g.fillOval(x*55, y*55, 40, 40);
 				empty.add(new Rectangle(x*56, y*56, 40, 40));
-	
 			}
 		}
 	}
 ```
-By anologi with ```Wall view```
+By anology with ```Wall view```
+```Menu view```
+Variable initialization:\
+Background image for the menu.\
+Creating a Button table.\
+```java
+	public static boolean click = false; 
+	Image img = new ImageIcon("src/resourses/catti.jpg").getImage();
+	public Button [] menuButtons = {new Button(50, 300, 130, 50,"Play"), new Button(50, 400, 130, 50,"Help"), new Button(50, 500, 130, 50,"Exit")};
+```
+```draw()``` - drawing background image and Buttons.
+```java
+	g.drawImage(img, 0, 0, null);
+	for (Button i :menuButtons) {
+		i.draw(g);
+	}
+```
