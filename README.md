@@ -182,7 +182,9 @@ if (mouseX > e.getX() && mouseX < e.getX()+e.getW() &&
 	mouseY > e.getY() && mouseY < e.getY()+e.getH()) {
 ```
 then find out what this button is. \ 
-If we press the button, then the state changes in this case to play.
+Changing the color and text of the button. \
+If we press the button, then the state changes in this case to play. \
+If the coordinate of the mouse is not on the button, then don't change the labels and colors of the buttons. 
 ```java
 if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {
 	e.color1 = Color.GREEN;
@@ -191,5 +193,8 @@ if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.endin
 		stan = BoardEnum.PLAY;
 		MenuView.click = false;
 	}
-}
+} ...
+else {
+	if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {e.color1 = Color.ORANGE ;e.s = "Play";}
+	...
 ```
