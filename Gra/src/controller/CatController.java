@@ -18,8 +18,6 @@ import view.MenuView;
 
 public class CatController implements MouseListener, KeyListener, MouseMotionListener {
 
-	Map m = new Map();
-	
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
