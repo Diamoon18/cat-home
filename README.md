@@ -597,3 +597,32 @@ Call the drawing function of individual objects.\
 	gh = new GhostView();
 	gh.draw(g);
 ```
+```Win view```
+Variable initialization:
+```java
+	Image img = new ImageIcon("src/resourses/gameover.png").getImage();
+	public Button ending[] = {new Button(320, 450, 120, 40,"Menu"), new Button(490, 450, 120, 40, "Play")};
+```
+Drawing a pink background.
+```java
+	g.setColor(Color.PINK);
+	g.fillRect(0, 0, 750, 750);
+	g.drawImage(img, 0, 0, null);
+```
+Write "Cat at home" on the screen and the number of bonuses received.
+```java
+	Font fontt = new Font("Arial", Font.BOLD, 60);
+	g.setFont(fontt);
+	g.setColor(Color.WHITE);
+	g.drawString("Cat at home", 285, 350);
+	Font fontScore = new Font("Arial", Font.BOLD, 40);
+	g.setFont(fontScore);
+	g.drawString("Pows:" + Board.powScore, 400, 400);
+```
+Drawing Buttons.
+```java
+	for(Button b: ending) {
+		b.draw(g);
+	}
+```
+By anology with ```GameOver view```.
