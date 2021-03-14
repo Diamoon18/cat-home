@@ -175,3 +175,21 @@ public void actionPerformed(ActionEvent e) {
 	}
 }
 ```
+```pasteButton()``` - whether the button was pressed. \
+If the coordinate of the mouse is on the button,
+``` java
+if (mouseX > e.getX() && mouseX < e.getX()+e.getW() &&
+	mouseY > e.getY() && mouseY < e.getY()+e.getH()) {
+```
+then find out what this button is. \ 
+If we press the button, then the state changes in this case to play.
+```java
+if(e.equals(menu.menuButtons[0]) || e.equals(help.wroc[1]) || e.equals(end.ending[1]) || e.equals(win.ending[1])) {
+	e.color1 = Color.GREEN;
+	e.s = "Grać";
+	if (MenuView.click) {
+		stan = BoardEnum.PLAY;
+		MenuView.click = false;
+	}
+}
+```
