@@ -107,4 +107,5 @@ The mouse button is pressed or not (for the start menu)
 		
 	}
 ```
-2) Model
+## 2) Model
+```Board model ``` - here is the main logic of the game.
