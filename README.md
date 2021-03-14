@@ -108,8 +108,8 @@ The mouse button is pressed or not (for the start menu)
 	}
 ```
 ## 2) Model
-```Board model ``` - here is the main logic of the game.
-Three main functions:
+```Board model ``` - here is the main logic of the game. \
+Three main functions: \
 ```gameRender()``` - is responsible for the Menu and Help keys in the Play state. \
 Also call the startGame function.
 ```java
