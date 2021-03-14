@@ -532,13 +532,13 @@ By anology with ```Wall view```
 ```Menu view```
 Variable initialization:\
 Background image for the menu.\
-Creating a Button table.\
+Creating a Button table.
 ```java
 	public static boolean click = false; 
 	Image img = new ImageIcon("src/resourses/catti.jpg").getImage();
 	public Button [] menuButtons = {new Button(50, 300, 130, 50,"Play"), new Button(50, 400, 130, 50,"Help"), new Button(50, 500, 130, 50,"Exit")};
 ```
-```draw()``` - drawing background image and Buttons.
+```draw(Graphics2D g))``` - drawing background image and Buttons.
 ```java
 	g.drawImage(img, 0, 0, null);
 	for (Button i :menuButtons) {
