@@ -481,3 +481,52 @@ try {
 }
 ```
 ## 3) View
+```CatView``` - draw the cat.
+Variable initialization:
+```java
+    Image img = new ImageIcon("src/resourses/catmalL.png").getImage();
+    public static Rectangle catt;
+```
+```Draw function```\
+Draw image of the cat.\
+Set color of the rectangle catt.\
+This rectangle needed for the **intersects method**, which is defined in the Rectangle class. (Check coalison)
+```java
+	g.drawImage(img, cat.getX(),cat.getY(), null);
+	g.setColor(Color.RED);
+	catt = new Rectangle(cat.getX()+30,cat.getY()+30,20,20);
+	//g.draw(catt);
+```
+By anologi with ```Dog view, Ghost view```.\
+```Bonus view```
+Variable initialization:
+```java
+	Map m = new Map();
+	public static ArrayList<Bonus> bon = new ArrayList<Bonus>();
+```
+```Draw function``` - drawing bonuses.\
+locBonus(Map m, ArrayList<Bonus> b) - this function looks for bonuses in the text file.
+```java
+	Bonus.locBonus(m, bon);
+	for (Bonus sc : bon) {
+		g.drawImage(sc.img, sc.getX(), sc.getY(), null);
+		g.setColor(Color.BLACK);
+		//g.draw(sc.getPow());
+	}
+```
+```Empty view``` - trap view.\
+If ```getMap()``` returns n, than draw gray oval and make new Rectangle for check coalition.
+```java
+	m = new Map();
+	for(int y = 0; y < 14; y++) {
+		for(int x = 0; x < 14; x++) {
+			if(m.getMap(x, y).equals("n")) {
+				g.setColor(Color.DARK_GRAY);
+				g.fillOval(x*55, y*55, 40, 40);
+				empty.add(new Rectangle(x*56, y*56, 40, 40));
+	
+			}
+		}
+	}
+```
+By anologi with ```Wall view```
