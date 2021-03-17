@@ -202,7 +202,7 @@ else {
 ```startGame()``` - main logic in the game. \
 Checking the coalition of the cat with the wall.\
 Adding music that symbolizes the loss of a life.\
-Game sleep for a second.\ 
+Game sleep for a second.
 And the cat returns to the starting point without one live.\
 By analogy with the trap.
 ```java
@@ -225,8 +225,8 @@ for(int i = 0; i < WallView.wall.size(); i++) {
 ```
 Checking the coalition of the cat with the paw bonus.\
 Adding music that symbolizes the collect paw bonus.\
-Transferred to the ghost.\ 
-Adding one bonus to cat score.\
+Transferred to the ghost.
+Adding one bonus to cat score.
 ```java
 for(int i = 0; i < BonusView.bon.size(); i++) {
 	if(CatView.catt.intersects(BonusView.bon.get(i).getPow())) {
@@ -263,7 +263,7 @@ if(CatView.getRectangleCat().intersects(HomeView.win) && myCat.getBonus() > 3){
 ```
 Checking the coalition of the cat with the ghost.\
 Adding music.\
-The cat returns to the starting point without paw bonuses.\
+The cat returns to the starting point without paw bonuses.
 ```java
 if(CatView.getRectangleCat().intersects(GhostView.ghost)){
 	Music.PlayMusic("src/resourses/ghost.wav");
@@ -273,7 +273,7 @@ if(CatView.getRectangleCat().intersects(GhostView.ghost)){
 }
 ```
 Checking the coalition of the cat with the dog.\
-The cat returns to the starting point without paw bonuses and lives.(game over)\
+The cat returns to the starting point without paw bonuses and lives.(game over)
 ```java
 if(CatView.getRectangleCat().intersects(DogView.doggi)){
 	myCat.setLive(0);
@@ -570,7 +570,7 @@ Displaying the number of lives and bonuses on the screen.
 	g.drawString("Live:" + cat.getLive(), 0, 20);
 	g.drawString("Pow:" + cat.getBonus(), 0, 40);
 ```
-Call the drawing function of individual objects.\
+Call the drawing function of individual objects.
 ```java
 	bon = new BonusView();
 	bon.draw(g);
