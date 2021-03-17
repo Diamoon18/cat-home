@@ -34,7 +34,7 @@ Here we put the Board to the center of the JFrame container.
 ```java   
 setContentPane(new Board()); 
 ```
-This line sets the size of the window. \ 
+This line sets the size of the window.\ 
 Also set the name of the application.
 I have not set up the ability to change the size of the application. 
 ```java   
